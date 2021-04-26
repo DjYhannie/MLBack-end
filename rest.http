@@ -1,0 +1,40 @@
+###
+GET http://mstalk.herokuapp.com/user/users
+
+
+###
+POST http://mstalk.herokuapp.com/user
+Content-Type: application/json
+
+{
+    "username": "Rhea",
+    "first_name": "Rhea",
+    "last_name": "Ardiente",
+    "password": "password"
+}
+
+###
+POST  http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+    "email":"rhea.ardiente@mlhuillier.com",
+    "password": "rhea2021"
+}
+
+###
+POST http://localhost:8000/api/emails
+Content-Type: application/json
+Authorization: Bearer HMAFbT5IbgGi2QtbLE2XtaPUY9ZrSldEfBectvZ3
+
+{
+    "user_id": 1,
+    "emails": ["aparece@gmail.com1",
+                "aparece@gmail.com2",
+                "aparece@gmail.com3",
+                "aparece@gmail.com4",
+                "aparece@gmail.com5",
+                "aparece@gmail.com6",
+                "aparece@gmail.com7"
+                ]
+}
