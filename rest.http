@@ -38,3 +38,46 @@ Authorization: Bearer HMAFbT5IbgGi2QtbLE2XtaPUY9ZrSldEfBectvZ3
                 "aparece@gmail.com7"
                 ]
 }
+
+###
+POST http://localhost:8000/api/forms
+Content-Type: application/json
+
+{
+    "question1": "This is a test",
+    "question2": "I am Beautitful",
+    "question3": "Life is Challenging",
+    "category1": "Good",
+    "category2": "Fair",
+    "category3": "Good",
+    "category4": "Fair",
+    "category5": "Outstanding",
+    "category6": "Poor",
+    "category7": "Fair",
+    "category8": "Good",
+    "category9": "Good",
+    "category10": "Good"
+}
+
+// ok na yang
+//akung
+kit kiton taka run
+// mag pakit
+kit rah mn sd ko..
+hahahhahaah ewwwwww k.a.  loud
+haha
+..
+maslood ang mokitkit..
+yuckssss...i will never do that
+haha.. ma
+ayu
+ lisod na makitki
+tan
+houyyy undanga na nahh oyyyy
+..........
+.. kuha na nimo sa
+pag integrate adto sa
+angular?
+dli mn akoy mo inte
+grate ani c mates mn....
+pwede ra sad ko nmo tudlou an

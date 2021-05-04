@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Forms;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class FormsController extends Controller
 {
@@ -12,74 +15,41 @@ class FormsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function addDataForms(Request $request)
     {
-        //
-    }
+        $user = Auth::user();
+        $validator = Validator::make($request->all(),[
+            'question1' => 'required',
+            'question2' => 'required',
+            'question3' => 'required',
+            'category1' => 'required',
+            'category2' => 'required',
+            'category3' => 'required',
+            'category4' => 'required',
+            'category5' => 'required',
+            'category6' => 'required',
+            'category7' => 'required',
+            'category8' => 'required',
+            'category9' => 'required',
+            'category10' => 'required'
+        ]);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        if ($validator ->fails()) {
+            return response()->json(['status_code'=>400, 'message'=>'Bad Request', $validator->errors()]);
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $response = [];
+        try{
+            $data = Forms::create($request->all());
+            $response['status_code'] = 200;
+            $response['message'] = 'success';
+            $response['data'] = $data;
+        } catch (\Exception $e) {
+            $response['status_code'] = 400;
+            $response['message'] = $e->getMessage();
+            $response['data'] = null;
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Forms  $forms
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Forms $forms)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Forms  $forms
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Forms $forms)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Forms  $forms
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Forms $forms)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Forms  $forms
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Forms $forms)
-    {
-        //
+        return response($response);
     }
 }

@@ -15,10 +15,22 @@ class CreateFormsTable extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            $table->longText('question1');
+            $table->longText('question2');
+            $table->longText('question3');
+            $table->string('category1');
+            $table->string('category2');
+            $table->string('category3');
+            $table->string('category4');
+            $table->string('category5');
+            $table->string('category6');
+            $table->string('category7');
+            $table->string('category8');
+            $table->string('category9');
+            $table->string('category10');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.

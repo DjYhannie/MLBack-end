@@ -41,6 +41,8 @@ class EmailRandomizerController extends Controller
         return response()->json($randomizedEmail);
     }
 
+
+    //query to send mail --not yet final
     public function sendEmail()
     {
         $user = Auth::user();
@@ -52,6 +54,5 @@ class EmailRandomizerController extends Controller
        Mail::to("rhea0951@gmail.com")->send(new Email($details));
        return "Email Sent";
     }
-
 
 }
