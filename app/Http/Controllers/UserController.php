@@ -36,6 +36,7 @@ class UserController extends Controller
 
             $token = $user->createToken('my-app-token')->plainTextToken;
             $response = [
+                'user' => $user,
                 'message' => 'Login Succesfully!',
                 'token' => $token,
             ];

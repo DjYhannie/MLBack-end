@@ -59,25 +59,19 @@ Content-Type: application/json
     "category10": "Good"
 }
 
-// ok na yang
-//akung
-kit kiton taka run
-// mag pakit
-kit rah mn sd ko..
-hahahhahaah ewwwwww k.a.  loud
-haha
-..
-maslood ang mokitkit..
-yuckssss...i will never do that
-haha.. ma
-ayu
- lisod na makitki
-tan
-houyyy undanga na nahh oyyyy
-..........
-.. kuha na nimo sa
-pag integrate adto sa
-angular?
-dli mn akoy mo inte
-grate ani c mates mn....
-pwede ra sad ko nmo tudlou an
+
+// login
+####
+
+// unsa gani to link sa backend naka deploy
+POST  https://mlback-end.herokuapp.com/api/login
+Content-Type: application/json
+
+{
+    "email":"rhea.ardiente@mlhuillier.com",
+    "password": "rhea2021"
+}
+
+// wala ni reflect ang pag return sa user dahh
+/// ma
+
