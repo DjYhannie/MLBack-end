@@ -37,7 +37,9 @@ class EmailRandomizerController extends Controller
         $randomizedEmail = EmailRandomizer::create([
             "user_id" => $user->id,
             "emails" => json_encode($emails)
-        ]);
+            ]);
+
+        $randomizedEmail->emails = json_decode($randomizedEmail->emails);
         return response()->json($randomizedEmail);
     }
 

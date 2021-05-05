@@ -20,6 +20,10 @@ class CreateEmailRandomizersTable extends Migration
         });
     }
 
+    // yang wala lage field na user_id ari?
+    //algehhh ga libog sad ko
+    // ako ni e migrate fresh yang
+    //cege
     /**
      * Reverse the migrations.
      *
