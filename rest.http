@@ -39,14 +39,6 @@ Authorization: Bearer 1|FGMffmZWVd8Tll0uoPlCUYQQ92bxowE1oi1skDsM
                 ]
 }
 
-
-/// yang ok na
-// na all ka perfect bahhh
-//akung utok ga dugo
-// nakuha ra nimo unsa problema ato?
-//ang pag convert ..// ouh sa pag convert sa array
-//ahhh okay lamats sir// welcome// geh padayun na
-//cege kuya// end na nako
 ###
 POST http://localhost:8000/api/forms
 Content-Type: application/json
@@ -71,7 +63,6 @@ Content-Type: application/json
 // login
 ####
 
-// unsa gani to link sa backend naka deploy
 POST  https://mlback-end.herokuapp.com/api/login
 Content-Type: application/json
 
@@ -80,21 +71,5 @@ Content-Type: application/json
     "password": "rhea2021"
 }
 
-// wala ni reflect ang pag return sa user dahh
-/// okayyy nahhhhhh
-// cge try nato to ang route na nag error..
-// unsa to na route?
-//huh..wala ko ka g
-// nag lisod mn daw ang
-//aww ga lisod daw sila ug pa display sa user nga naka log in
-// ahw cge pa tri daw nila ug pa display karon..
-// nag try na cla?
-// nag try nahhh
-//baw unsa kahay result atu....
-// chat lang ko kung na ok na o wala ba..
-// e end na nko
-//installan kaha naku c mates ug teamviewer nohh??/
-//layu d i mo? doul ra mn...para maka balo sad kas problema
-// pwede rah sd..
-cge end nahhhh
+
 

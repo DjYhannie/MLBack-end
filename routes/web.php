@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmailRandomizerController;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\MailController;
-use Resources\Views;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +13,12 @@ use Resources\Views;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function(){
-    return "Hello World";
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/send-mail', [EmailRandomizerController::class, 'sendEmail']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
