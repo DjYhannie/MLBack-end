@@ -16,8 +16,13 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        echo "This a test";
-        return $request->user();
+        $user = $request->user();
+
+        if($user->is_admin == 1) { // check if admin
+            return $next($request); 
+        }
+
+        return "Unauthorized!";
+
     }
 }
-

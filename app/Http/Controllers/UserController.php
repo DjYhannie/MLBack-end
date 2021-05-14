@@ -46,14 +46,6 @@ class UserController extends Controller
 
     }
 
-//code to get all the users
-    public function getUsers()
-    {
-        $user = Auth::user();
-        $users = User::all();
-        return response()->json($users);
-    }
-
 
     //code for user logout
     public function logout(User $id)
@@ -66,4 +58,15 @@ class UserController extends Controller
             'message' => 'Token deleted successfully!'
         ]);
     }
+
+
+    //code to get all the users
+    public function getUsers()
+    {
+        $user = Auth::user();
+        $users = User::all();
+        return response()->json($users);
+    }
 }
+
+

@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EmailRandomizer;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+
 use App\Models\User;
 use Dotenv\Validator;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Mail;
+use App\Models\EmailRandomizer;
 use App\Mail\Email;
+use App\Notifications\EmailNotif;
+
+
 
 class EmailRandomizerController extends Controller
 {
+    use Notifiable;
     /**
      * Display a listing of the resource.
      *
@@ -45,16 +52,39 @@ class EmailRandomizerController extends Controller
 
 
     //query to send mail --not yet final
-    public function sendEmail()
-    {
-        $user = Auth::user();
-       $details = [
-           'title' => " Title: Email Test Connection",
-           'body' => "Body: This is a test"
-       ];
+    // public function sendEmail()
+    // {
+    //     $user = Auth::user();
+    //    $details = [
+    //        'title' => " Title: Email Test Connection",
+    //        'body' => "Body: This is a test"
+    //    ];
 
-       Mail::to("rhea0951@gmail.com")->send(new Email($details));
-       return "Email Sent";
+    //    $emails = $this->selectedMails();
+    //    Mail::mailer('sendgrid')
+
+    //         ->to($emails)
+    //         ->send(new Email($details));
+    //         return "done";
+
+    //    Mail::to("rhea0951@gmail.com")->send(new Email($details));
+    //    return "Email Sent";
+    // }
+
+    public function sendTestNotification()
+    {
+        $user = User::first();
+
+        $emailData = [
+            'greeting' => 'Greeting test',
+            'body' => 'This a test',
+            'emailText' => 'Please fill up',
+            'url' => url('/'),
+            'thankyou' => 'You are mine'
+        ];
+
+        // $user->notify(new EmailNotif($emailData));
+        Notification::send($user, new EmailNotif($emailData));
     }
 
 }
