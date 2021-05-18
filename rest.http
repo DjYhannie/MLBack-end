@@ -42,6 +42,7 @@ Authorization: Bearer 1|FGMffmZWVd8Tll0uoPlCUYQQ92bxowE1oi1skDsM
 ###
 POST http://localhost:8000/api/forms
 Content-Type: application/json
+Authorization: Bearer 1|6xtJFJRlaEa3ej6qN35oV42FKy7tiRrZSUQ3V9Hn
 
 {
     "question1": "This is a test",
@@ -71,5 +72,13 @@ Content-Type: application/json
     "password": "reina2021"
 }
 
+//responses
+####
+
+GET http://localhost:8000/api/responses
+
+#####
+GET https://mlback-end.herokuapp.com/api/users
+Authorization: Bearer 3|REfVyNIbGgaSkw9iEvSnamcVBJGLWeD0PuJzf2n9
 
 

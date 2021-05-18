@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -45,7 +46,7 @@ Route::middleware('auth:sanctum')->group(function(){
 
 
 
-
+Route::get('/responses', [AdminController::class, 'getResposes']);
 Route::get('/email', [EmailRandomizerController::class, 'getAllMails']);
 Route::get('sendEmail', [EmailRandomizerController::class, 'sendEmail']);
 // Route::post('/emails', [EmailRandomizerController::class, 'selectedMails']);

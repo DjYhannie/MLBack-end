@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\User;
 use App\Models\EmailRandomizer;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,13 @@ class AdminController extends Controller
         return response()->json($randomizedEmail);
     }
 
-    
+    //query to get the responses
+    public function getResposes()
+    {
+        $responses = DB::table('forms')->get();
+        return response()->json($responses);
+    }
+
+
 
 }
