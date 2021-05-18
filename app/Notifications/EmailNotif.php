@@ -30,7 +30,7 @@ class EmailNotif extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -57,7 +57,7 @@ class EmailNotif extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'emailData_id' => $this->emailData['emailData_id']
         ];
     }
 }

@@ -27,6 +27,11 @@ class EmailRandomizerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 //query to get all emails in the database
     public function getAllMails()
     {
@@ -85,6 +90,8 @@ class EmailRandomizerController extends Controller
 
         // $user->notify(new EmailNotif($emailData));
         Notification::send($user, new EmailNotif($emailData));
+
+        dd('$emailData');
     }
 
 }

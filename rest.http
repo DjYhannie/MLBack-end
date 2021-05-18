@@ -67,8 +67,8 @@ POST  https://mlback-end.herokuapp.com/api/login
 Content-Type: application/json
 
 {
-    "email":"jersene.sanchez@mlhuillier.com",
-    "password": "jersene2021"
+    "email":"reina.mates@mlhuillier.com",
+    "password": "reina2021"
 }
 
 
