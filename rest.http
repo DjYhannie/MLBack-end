@@ -78,7 +78,7 @@ Content-Type: application/json
 GET http://localhost:8000/api/responses
 
 #####
-GET https://mlback-end.herokuapp.com/api/users
-Authorization: Bearer 3|REfVyNIbGgaSkw9iEvSnamcVBJGLWeD0PuJzf2n9
+GET https://mlback-end.herokuapp.com/api/email
+Authorization: Bearer 10|huBIKNfxIt5391v0KogPon9QtN2dJUSGSDTi5MfR
 
 

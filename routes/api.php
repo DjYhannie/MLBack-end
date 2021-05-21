@@ -28,6 +28,7 @@ Route::post('/login',[UserController::class,'login']);
 Route::middleware('auth:sanctum')->group(function(){
 
     Route::get('/users', [UserController::class, 'getUsers']);
+    Route::get('/email', [EmailRandomizerController::class, 'getAllMails']);
     Route::post('/emails', [EmailRandomizerController::class, 'selectedMails']);
     Route::post('/forms', [FormsController::class, 'addDataForms']);
 
@@ -47,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function(){
 
 
 Route::get('/responses', [AdminController::class, 'getResposes']);
-Route::get('/email', [EmailRandomizerController::class, 'getAllMails']);
+
 Route::get('sendEmail', [EmailRandomizerController::class, 'sendEmail']);
 // Route::post('/emails', [EmailRandomizerController::class, 'selectedMails']);
 
