@@ -40,7 +40,27 @@ Authorization: Bearer 1|FGMffmZWVd8Tll0uoPlCUYQQ92bxowE1oi1skDsM
 }
 
 ###
-POST http://localhost:8000/api/forms
+
+POST  https://mlback-end.herokuapp.com/api/emails
+Content-Type: application/json
+Authorization: Bearer 10|huBIKNfxIt5391v0KogPon9QtN2dJUSGSDTi5MfR
+
+{
+    "user_id": 1,
+    "emails": ["aparece@gmail.com1",
+                "aparece@gmail.com2",
+                "aparece@gmail.com3",
+                "aparece@gmail.com4",
+                "aparece@gmail.com5",
+                "aparece@gmail.com6",
+                "aparece@gmail.com7"
+                ]
+}
+###
+# POST http://localhost:8000/api/forms
+
+POST  https://mlback-end.herokuapp.com/api/emails
+
 Content-Type: application/json
 Authorization: Bearer 1|6xtJFJRlaEa3ej6qN35oV42FKy7tiRrZSUQ3V9Hn
 
@@ -80,5 +100,13 @@ GET http://localhost:8000/api/responses
 #####
 GET https://mlback-end.herokuapp.com/api/email
 Authorization: Bearer 10|huBIKNfxIt5391v0KogPon9QtN2dJUSGSDTi5MfR
+
+
+
+###
+
+GET http://localhost:8000/api/test
+Authorization: Bearer 3|6q6A5vmPEbhNXjmTPmb8XlHYS6CVVBpfRCrx8gwt
+
 
 

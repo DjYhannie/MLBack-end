@@ -78,7 +78,8 @@ class EmailRandomizerController extends Controller
 
     public function sendTestNotification()
     {
-        $user = User::first();
+        $user = Auth::user();
+        // $user = User::first();
 
         $emailData = [
             'greeting' => 'Greeting test',
