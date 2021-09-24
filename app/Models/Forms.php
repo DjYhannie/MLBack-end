@@ -24,4 +24,7 @@ class Forms extends Model
         'category9',
         'category10'
     ];
+
+
+    protected $table = "forms";
 }

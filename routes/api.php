@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmailRandomizerController;
-use App\Http\Controllers\FormsController;
 use App\Models\Admin;
 use App\Models\EmailRandomizer;
 
@@ -46,7 +45,7 @@ Route::middleware('auth:sanctum')->group(function(){
 });
 
 
-Route::post('/forms', [FormsController::class, 'addDataForms']);
+Route::post('/forms', [EmailRandomizerController::class, 'addDataForms']);
 Route::get('/responses', [AdminController::class, 'getResposes']);
 Route::get('sendEmail', [EmailRandomizerController::class, 'sendEmail']);
 // Route::post('/emails', [EmailRandomizerController::class, 'selectedMails']);
